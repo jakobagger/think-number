@@ -3,3 +3,7 @@ body {
     color: lightgray;
     font-family: fantasy;
 }
+
+.hide {
+    visibility: hidden;
+  }
