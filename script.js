@@ -2,6 +2,10 @@
 
 window.addEventListener("load", main);
 
+let start = 1;
+let end = 100;
+let middle;
+
 function main(){
 console.log("Now witness the power of this fully operational JavaScript!");
 hideAnswerButtons();
@@ -37,10 +41,12 @@ function showGuess(){
 }
 
 function makeGuess(){
-    return Math.floor(Math.random()*99)+1;
+    middle = Math.floor((start+end)/2);
+    return middle;
 }
 
 function answerLow(){
+    start = middle+1;
     console.log("The computer's guess was too low.");
     const lastItem = document.querySelector("#guess-list li:last-child");
     lastItem.textContent += "That was too low."
@@ -48,6 +54,7 @@ function answerLow(){
 }
 
 function answerHigh(){
+    end = middle-1;
     console.log("The computer's guess was too high.");
     const lastItem = document.querySelector("#guess-list li:last-child");
     lastItem.textContent += "That was too high."
